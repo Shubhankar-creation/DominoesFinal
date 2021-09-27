@@ -9,12 +9,11 @@ public class G_Instance_Menu : MonoBehaviour
     void Start()
     {
         instanceG();
-        StartCoroutine("spawnGround");
     }
 
     IEnumerator spawnGround()
     {
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(5f);
         instanceG();
     }
 

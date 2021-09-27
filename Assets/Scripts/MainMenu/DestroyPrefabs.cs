@@ -4,7 +4,7 @@ public class DestroyPrefabs : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("DominoesMenu"))        // Destroys any unused Dominoes
+        if (other.gameObject.CompareTag("D_Destroy_Col"))        // Destroys any unused Dominoes
         {
             Destroy(other.gameObject);
         }
