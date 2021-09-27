@@ -8,7 +8,7 @@ public class DestroyPrefabs : MonoBehaviour
         {
             Destroy(other.gameObject);
         }
-        else if (other.gameObject.CompareTag("GroundMenu"))         // Destroys any unused Platfrom
+        else if (other.gameObject.CompareTag("G_Destroy_Col"))         // Destroys any unused Platfrom
         {
             Destroy(other.gameObject.transform.parent.gameObject);
         }
