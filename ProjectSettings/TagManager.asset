@@ -6,6 +6,7 @@ TagManager:
   tags:
   - G_Destroy_Col
   - D_Destroy_Col
+  - GROUND
   layers:
   - Default
   - TransparentFX
