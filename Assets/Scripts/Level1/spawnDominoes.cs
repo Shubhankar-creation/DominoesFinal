@@ -38,7 +38,7 @@ public class spawnDominoes: MonoBehaviour
                     {
 
 
-                        newDominos = Instantiate(dominosPrefab, new Vector3(hit.point.x, 0.25f, hit.point.z), Quaternion.identity);
+                        newDominos = Instantiate(dominosPrefab, new Vector3(hit.point.x, 0.17f, hit.point.z), Quaternion.identity);
                         newDominos.transform.parent = this.transform;
                         dominosGO[j] = newDominos; j = j + 1;
 
@@ -62,7 +62,7 @@ public class spawnDominoes: MonoBehaviour
 
                         if (dist >= 0.3f)
                         {
-                            newDominos = Instantiate(dominosPrefab, new Vector3(hit.point.x, 0.25f, hit.point.z), Quaternion.identity);
+                            newDominos = Instantiate(dominosPrefab, new Vector3(hit.point.x, 0.17f, hit.point.z), Quaternion.identity);
                             newDominos.transform.parent = this.transform;
                             instaceRot[k] = instancePos;
 
