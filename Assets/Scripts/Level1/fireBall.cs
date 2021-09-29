@@ -5,25 +5,27 @@ using UnityEngine;
 public class fireBall : MonoBehaviour
 {
 
-    public InGameUi getFire;        // to be impilment via UI
+    public Rigidbody rb;
+    public inGameUi getFire;
+    public float ballSpeed = 30f;
 
     void Update()
     {
-        if (getfire.canfire)
+        if (getFire.canFire)
         {
-            debug.log("sphere should move");
+            Debug.Log("sphere should move");
 
-            transform.rotate(vector3.up, -1 * getfire.firerot.z);
+            transform.Rotate(Vector3.up, -1 * getFire.fireRot.z);
 
-            startcoroutine("fire");
+            StartCoroutine("Fire");
 
-            getfire.canfire = false;
+            getFire.canFire = false;
         }
-
     }
 
     IEnumerator Fire()
     {
         yield return new WaitForSeconds(1);
+        rb.AddRelativeForce(Vector3.forward * ballSpeed);
     }
 }
