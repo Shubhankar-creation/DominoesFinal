@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2556303577135194985}
   m_Layer: 0
   m_Name: Dominoes-InGame
-  m_TagString: Untagged
+  m_TagString: Dominoes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -7,6 +7,8 @@ TagManager:
   - G_Destroy_Col
   - D_Destroy_Col
   - GROUND
+  - D-Spawn
+  - Dominoes
   layers:
   - Default
   - TransparentFX

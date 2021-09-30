@@ -13,6 +13,18 @@ public class inGameUi : MonoBehaviour
     public bool canFire, dominoesFall;
 
     public Vector3 fireRot;
+
+    spawnDominoes canSpawn;
+    private void Start()
+    {
+        canSpawn = GameObject.FindGameObjectWithTag("D-Spawn").GetComponent<spawnDominoes>();
+    }
+    
+    public void gameEndUI()
+    {
+        dominoesFall = true;
+        Debug.Log(dominoesFall);
+    }
     public void retryLvl()
     {
         SceneManager.LoadScene(1);
@@ -27,6 +39,7 @@ public class inGameUi : MonoBehaviour
         goFire.transform.SetParent(transform);
         goFire.GetComponent<RectTransform>().localScale = new Vector3(1f, 1f, 1f);
         goFire.GetComponent<RectTransform>().anchoredPosition = new Vector3(0f, -900f, 0f);
+        canSpawn.enabled = false;
     }
 
     public void onfireClick()
@@ -35,13 +48,6 @@ public class inGameUi : MonoBehaviour
         Debug.Log("Rotation to shot at is " + fireRot.z);
         canFire = true;
         goFire.active = false;
-
-        StartCoroutine("GetDominoes");
     }
 
-    IEnumerator GetDominoes()
-    {
-        yield return new WaitForSeconds(10f);
-        dominoesFall = true;
-    }
 }
