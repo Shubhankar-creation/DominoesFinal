@@ -9,6 +9,7 @@ public class inGameUi : MonoBehaviour
     public GameObject fireUI;
     public GameObject fireBtn;
     public GameObject retry, done;
+    public GameObject nextLvl;
 
     public bool canFire, dominoesFall;
 
@@ -19,10 +20,17 @@ public class inGameUi : MonoBehaviour
     {
         canSpawn = GameObject.FindGameObjectWithTag("D-Spawn").GetComponent<spawnDominoes>();
     }
-    
+
+    public void loadLevel()
+    {
+        SceneManager.LoadScene(1);
+    }
+
     public void gameEndUI()
     {
         dominoesFall = true;
+        fireBtn.active = false;
+        nextLvl.active = true;
         Debug.Log(dominoesFall);
     }
     public void retryLvl()
