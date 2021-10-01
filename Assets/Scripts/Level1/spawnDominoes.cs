@@ -8,21 +8,18 @@ public class spawnDominoes: MonoBehaviour
 
     private Touch touch;
     private Vector3 instancePos;
-    private Vector3[] instaceRot = new Vector3[30];
+    private Vector3 instaceRot;
     private int k = 0, j = 0;
     private GameObject newDominos;
     private GameObject[] dominosGO = new GameObject[3];
-    void Start()
-    {
 
-    }
-
-    // Update is called once per frame
     void Update()
     {
+        
 
-        if (Input.touchCount > 0 && k <= maxDominoes)
+        if (Input.touchCount > 0 && k < maxDominoes)
         {
+            Debug.Log(k);
             touch = Input.GetTouch(0);
 
             Ray ray = Camera.main.ScreenPointToRay(touch.position);
@@ -44,7 +41,7 @@ public class spawnDominoes: MonoBehaviour
 
                         setRot();
 
-                        instaceRot[k] = hit.point;
+                        instaceRot = hit.point;
                         k = k + 1;
                     }
                 }
@@ -58,13 +55,13 @@ public class spawnDominoes: MonoBehaviour
                     if (hit.collider.tag == "GROUND")
                     {
                         instancePos = hit.point;
-                        float dist = Vector3.Distance(instancePos, instaceRot[k - 1]);
+                        float dist = Vector3.Distance(instancePos, instaceRot);
 
-                        if (dist >= 0.3f)
+                        if (dist >= 0.2f)
                         {
                             newDominos = Instantiate(dominosPrefab, new Vector3(hit.point.x, 0.17f, hit.point.z), Quaternion.identity);
                             newDominos.transform.parent = this.transform;
-                            instaceRot[k] = instancePos;
+                            instaceRot = instancePos;
 
                             dominosGO[j] = newDominos; j = j + 1;
 

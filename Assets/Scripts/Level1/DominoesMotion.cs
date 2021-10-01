@@ -11,9 +11,7 @@ public class DominoesMotion : MonoBehaviour
     {
         if (dFire.canFire)
         {
-            Debug.Log("Fire");
             allDominoes = GameObject.FindGameObjectsWithTag("Dominoes");
-            Debug.Log(allDominoes.Length);
 
             StartCoroutine("checkMotion");
         }
@@ -42,8 +40,7 @@ public class DominoesMotion : MonoBehaviour
 
     public IEnumerator checkMotion()
     {
-        Debug.Log("wait for 3 sec");
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         runafter3sec();
     }
 
@@ -51,7 +48,6 @@ public class DominoesMotion : MonoBehaviour
     {
         if (flag == 0)
         {
-            Debug.Log("EndScrene");
             dFire.gameEndUI();
         }
         else

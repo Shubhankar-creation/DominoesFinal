@@ -8,13 +8,7 @@ public class getAllDominoesFall : MonoBehaviour
     public inGameUi getDominoes;
     GameObject[] allFallDominoes;
     private int totalDominoesFall = 0;
-    // Start is called before the first frame update
-    void Start()
-    {
 
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (getDominoes.dominoesFall)
@@ -28,7 +22,6 @@ public class getAllDominoesFall : MonoBehaviour
                 }
             }
             getDominoes.dominoesFall = false;
-            Debug.Log(totalDominoesFall);
         }
     }
 }
