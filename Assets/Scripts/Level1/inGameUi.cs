@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -29,7 +28,6 @@ public class inGameUi : MonoBehaviour
 
     public void gameEndUI()
     {
-        setDomBg.active = false;
         dominoesFall = true;
         fireBtn.active = false;
         nextLvl.active = true;
@@ -47,7 +45,7 @@ public class inGameUi : MonoBehaviour
         goFire = Instantiate(fireUI);
         goFire.transform.SetParent(transform);
         goFire.GetComponent<RectTransform>().localScale = new Vector3(1f, 1f, 1f);
-        goFire.GetComponent<RectTransform>().anchoredPosition = new Vector3(0f, -890f, 0f);
+        goFire.GetComponent<RectTransform>().anchoredPosition = new Vector3(0f, -850f, 0f);
         canSpawn.enabled = false;
     }
 
@@ -55,6 +53,8 @@ public class inGameUi : MonoBehaviour
     {
         fireRot = goFire.GetComponent<fireUIRot>().rotaVal;
         canFire = true;
+        setDomBg.active = false;
+        fireBtn.active = false;
         goFire.active = false;
     }
 

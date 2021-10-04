@@ -40,7 +40,7 @@ public class DominoesMotion : MonoBehaviour
 
     public IEnumerator checkMotion()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         runafter3sec();
     }
 
