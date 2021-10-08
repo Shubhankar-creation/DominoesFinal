@@ -19,7 +19,7 @@ public class D_Instance_Menu : MonoBehaviour
 
     private void instanceDom()
     {
-        k += 9.6f;
+        k += 10.1f;
         GameObject newDom = Instantiate(menuDominoes, new Vector3(transform.position.x, 0.265f, k), Quaternion.identity) as GameObject;
         newDom.transform.parent = transform;
         StartCoroutine("spawnDom");
